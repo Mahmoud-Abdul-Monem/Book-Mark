@@ -1,1 +1,332 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
+
+
+@theme inline {
+  /* —— Fonts —— */
+  --font-sans: "Geist Variable", sans-serif;
+  --font-heading: var(--font-sans);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* —— shadcn/base-nova color aliases (required by ui components) —— */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* —— Figma design color tokens —— */
+  /* Brand blue (links, active states, badges) */
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-border: var(--brand-border);
+  /* Semantic surface tokens */
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-sunken: var(--surface-sunken);
+  /* Status colors */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  /* Category badge (Figma: "Frontend & React", "AI & Tools", "Reading List") */
+  --color-badge: var(--badge);
+  --color-badge-foreground: var(--badge-foreground);
+  /* Favourite star */
+  --color-star: var(--star);
+  /* Auth page specific: dark navy page bg */
+  --color-auth-bg: var(--auth-bg);
+  --color-auth-panel: var(--auth-panel);
+
+  /* —— Typography scale (matches Figma heading / body sizes) —— */
+  /* Heading XL — "Welcome back", "Create your account" */
+  --text-heading-xl: 2.5rem;
+  /* 40px */
+  --text-heading-xl--line-height: 1.2;
+  --text-heading-xl--font-weight: 700;
+  /* Heading LG — "All Bookmarks", "Add Bookmark" */
+  --text-heading-lg: 1.5rem;
+  /* 24px */
+  --text-heading-lg--line-height: 1.3;
+  --text-heading-lg--font-weight: 700;
+  /* Heading SM — card titles */
+  --text-heading-sm: 0.9375rem;
+  /* 15px */
+  --text-heading-sm--line-height: 1.4;
+  --text-heading-sm--font-weight: 600;
+  /* Body — card descriptions, form help text */
+  --text-body: 0.875rem;
+  /* 14px */
+  --text-body--line-height: 1.5;
+  --text-body--font-weight: 400;
+  /* Label — UPPERCASE field labels (EMAIL ADDRESS, PASSWORD…) */
+  --text-label: 0.6875rem;
+  /* 11px */
+  --text-label--line-height: 1.2;
+  --text-label--font-weight: 600;
+  --text-label--letter-spacing: 0.08em;
+  /* Caption — domain line, counts */
+  --text-caption: 0.75rem;
+  /* 12px */
+  --text-caption--line-height: 1.4;
+  --text-caption--font-weight: 400;
+
+  /* —— Spacing tokens (Figma-measured gaps / paddings) —— */
+  --spacing-page-gutter: clamp(1rem, 4vw, 2rem);
+  --spacing-section: 4rem;
+  --spacing-card: 1.25rem;
+  /* 20px — card internal padding */
+  --spacing-card-gap: 1rem;
+  /* 16px — grid gap between cards */
+  --spacing-control: 0.625rem;
+  /* 10px */
+  --spacing-sidebar: 13.75rem;
+  /* 220px — sidebar width */
+  --spacing-content: 72rem;
+  /* max content width */
+  --spacing-form-panel: 28rem;
+  /* 448px — auth card max-width */
+  --spacing-modal: 36rem;
+  /* 576px — modal max-width */
+
+  /* —— Border radius tokens (Figma-measured) —— */
+  /* Base unit = 10px */
+  --radius: 0.625rem;
+  --radius-xs: 0.375rem;
+  /* 6px  — small badges / chips */
+  --radius-sm: 0.5rem;
+  /* 8px  — inputs, secondary elements */
+  --radius-md: 0.75rem;
+  /* 12px — cards (light mode) */
+  --radius-lg: 1rem;
+  /* 16px — modals, auth panel, large cards */
+  --radius-xl: 1.25rem;
+  /* 20px — large panels */
+  --radius-pill: 9999px;
+  /* — pill buttons, badges */
+
+  /* Semantic radius aliases */
+  --radius-btn: var(--radius-pill);
+  /* Figma: all primary buttons are pill-shaped */
+  --radius-card: var(--radius-md);
+  /* Figma: bookmark cards */
+  --radius-input: var(--radius-sm);
+  /* Figma: form inputs */
+  --radius-badge: var(--radius-pill);
+  /* Figma: category tags & auth-step pills */
+  --radius-modal: var(--radius-lg);
+  /* Figma: "Add Bookmark" dialog */
+  --radius-panel: var(--radius-lg);
+  /* Figma: auth form panel */
+  --radius-otp: var(--radius-md);
+  /* Figma: OTP digit boxes */
+  --radius-sidebar-item: var(--radius-sm);
+  /* Figma: active sidebar nav item */
+
+  /* —— Elevation / shadows —— */
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+  --shadow-popover: 0 8px 24px -8px rgb(0 0 0 / 0.18);
+  --shadow-dialog: 0 20px 60px -16px rgb(0 0 0 / 0.25);
+
+  /* —— Animation —— */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1.2);
+  --animate-duration-fast: 150ms;
+  --animate-duration-normal: 200ms;
+  --animate-duration-slow: 300ms;
+}
+
+/* ============================================================
+   LIGHT MODE
+   ============================================================ */
+:root {
+  color-scheme: light;
+
+  /* —— Brand blue (#5B7AFF) —— */
+  --brand: #5B7AFF;
+  --brand-foreground: #ffffff;
+  --brand-soft: #EEF2FF;
+  /* badge background */
+  --brand-border: #C7D3FE;
+
+  /* —— Status —— */
+  --success: #10B981;
+  --success-foreground: #ffffff;
+  --warning: #F59E0B;
+  /* also used for star/favourite icon */
+  --warning-foreground: #1a1a1a;
+  --info: #3B82F6;
+  --info-foreground: #ffffff;
+  --destructive: #EF4444;
+  /* "URL is required" error text & border */
+
+  /* —— Badge / category chips —— */
+  --badge: #EEF2FF;
+  --badge-foreground: #5B7AFF;
+
+  /* —— Favourite star —— */
+  --star: #F59E0B;
+
+  /* —— Auth page colours (not used in main app) —— */
+  --auth-bg: #060D1A;
+  --auth-panel: #0D1829;
+
+  /* —— Core palette —— */
+  --background: #F3F4F6;
+  /* main page background */
+  --foreground: #111827;
+  /* primary text */
+  --card: #FFFFFF;
+  --card-foreground: #111827;
+  --popover: #FFFFFF;
+  --popover-foreground: #111827;
+  --primary: #111827;
+  /* primary button bg */
+  --primary-foreground: #FFFFFF;
+  --secondary: #F3F4F6;
+  --secondary-foreground: #374151;
+  --muted: #F9FAFB;
+  --muted-foreground: #6B7280;
+  /* subdued text: descriptions, domains */
+  --accent: #EEF2FF;
+  --accent-foreground: #5B7AFF;
+  --border: #E5E7EB;
+  --input: #FFFFFF;
+  --ring: #5B7AFF;
+
+  /* —— Surface helpers —— */
+  --surface-raised: #FFFFFF;
+  --surface-sunken: #F3F4F6;
+
+  /* —— Sidebar —— */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #111827;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #EEF2FF;
+  /* active nav item bg */
+  --sidebar-accent-foreground: #5B7AFF;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #5B7AFF;
+}
+
+/* ============================================================
+   DARK MODE
+   ============================================================ */
+.dark {
+  color-scheme: dark;
+
+  /* —— Brand blue (lighter on dark) —— */
+  --brand: #6B8FFF;
+  --brand-foreground: #060D1A;
+  --brand-soft: #1A2744;
+  --brand-border: #2D3F6B;
+
+  /* —— Status —— */
+  --success: #10B981;
+  --success-foreground: #052e1c;
+  --warning: #FBBF24;
+  --warning-foreground: #1a1000;
+  --info: #60A5FA;
+  --info-foreground: #0a1628;
+  --destructive: #EF4444;
+
+  /* —— Badge / category chips —— */
+  --badge: #1A2744;
+  --badge-foreground: #6B8FFF;
+
+  /* —— Favourite star —— */
+  --star: #FBBF24;
+
+  /* —— Auth page —— */
+  --auth-bg: #060D1A;
+  --auth-panel: #0D1829;
+
+  /* —— Core palette —— */
+  --background: #060D1A;
+  /* deepest navy page bg */
+  --foreground: #F9FAFB;
+  --card: #0D1829;
+  /* bookmark card bg */
+  --card-foreground: #F9FAFB;
+  --popover: #111E30;
+  --popover-foreground: #F9FAFB;
+  --primary: #F9FAFB;
+  /* primary button bg (white in dark) */
+  --primary-foreground: #111827;
+  --secondary: #111E30;
+  --secondary-foreground: #CBD5E1;
+  --muted: #0F1A2B;
+  --muted-foreground: #8FA3BF;
+  /* subdued text */
+  --accent: #1A2744;
+  --accent-foreground: #6B8FFF;
+  --border: #1F2D45;
+  --input: #111E30;
+  /* input field bg */
+  --ring: #6B8FFF;
+
+  /* —— Surface helpers —— */
+  --surface-raised: #0D1829;
+  --surface-sunken: #060D1A;
+
+  /* —— Sidebar —— */
+  --sidebar: #0B1424;
+  --sidebar-foreground: #F9FAFB;
+  --sidebar-primary: #F9FAFB;
+  --sidebar-primary-foreground: #111827;
+  --sidebar-accent: #1A2744;
+  /* active nav item bg */
+  --sidebar-accent-foreground: #6B8FFF;
+  --sidebar-border: #1F2D45;
+  --sidebar-ring: #6B8FFF;
+}
+
+/* ============================================================
+   BASE LAYER
+   ============================================================ */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    @apply font-sans;
+  }
+
+  /* Figma uppercase field labels */
+  .label-uppercase {
+    @apply text-[length:var(--text-label)] font-semibold tracking-[var(--text-label--letter-spacing)] uppercase;
+  }
+}
