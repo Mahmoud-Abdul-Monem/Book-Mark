@@ -9,75 +9,148 @@
   --font-sans: "Geist Variable", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --color-background:                 var(--background);
-  --color-foreground:                 var(--foreground);
-  --color-card:                       var(--card);
-  --color-card-foreground:            var(--card-foreground);
-  --color-popover:                    var(--popover);
-  --color-popover-foreground:         var(--popover-foreground);
-  --color-primary:                    var(--primary);
-  --color-primary-foreground:         var(--primary-foreground);
-  --color-secondary:                  var(--secondary);
-  --color-secondary-foreground:       var(--secondary-foreground);
-  --color-muted:                      var(--muted);
-  --color-muted-foreground:           var(--muted-foreground);
-  --color-accent:                     var(--accent);
-  --color-accent-foreground:          var(--accent-foreground);
-  --color-destructive:                var(--destructive);
-  --color-border:                     var(--border);
-  --color-input:                      var(--input);
-  --color-ring:                       var(--ring);
-  --color-sidebar:                    var(--sidebar);
-  --color-sidebar-foreground:         var(--sidebar-foreground);
-  --color-sidebar-primary:            var(--sidebar-primary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent:             var(--sidebar-accent);
-  --color-sidebar-accent-foreground:  var(--sidebar-accent-foreground);
-  --color-sidebar-border:             var(--sidebar-border);
-  --color-sidebar-ring:               var(--sidebar-ring);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 
-  --radius-sm:  calc(var(--radius) * 0.6);
-  --radius-md:  calc(var(--radius) * 0.8);
-  --radius-lg:  var(--radius);
-  --radius-xl:  calc(var(--radius) * 1.4);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* ── Vault Design Tokens → Tailwind classes ─────────────────────────────
+     Colors   →  bg-vault-*  /  text-vault-*  /  border-vault-*
+     Radii    →  rounded-vault-*
+     Shadows  →  shadow-vault-*
+     Sizes    →  text-vault-* (font sizes)
+  ──────────────────────────────────────────────────────────────────────── */
+
+  /* Brand / Accent */
+  --color-vault-primary: var(--vault-primary);
+  --color-vault-primary-light: var(--vault-primary-light);
+  --color-vault-primary-muted: var(--vault-primary-muted);
+  --color-vault-primary-hover: var(--vault-primary-hover);
+
+  /* Surfaces */
+  --color-vault-bg: var(--vault-bg);
+  --color-vault-surface: var(--vault-surface);
+  --color-vault-surface-raised: var(--vault-surface-raised);
+  --color-vault-sidebar: var(--vault-sidebar-bg);
+
+  /* Text */
+  --color-vault-text: var(--vault-text-primary);
+  --color-vault-text-secondary: var(--vault-text-secondary);
+  --color-vault-text-muted: var(--vault-text-muted);
+  --color-vault-text-on-primary: var(--vault-text-on-primary);
+  --color-vault-link: var(--vault-text-link);
+
+  /* Borders */
+  --color-vault-border: var(--vault-border);
+  --color-vault-border-subtle: var(--vault-border-subtle);
+
+  /* Inputs */
+  --color-vault-input: var(--vault-input-bg);
+  --color-vault-placeholder: var(--vault-input-placeholder);
+
+  /* Buttons */
+  --color-vault-btn-primary: var(--vault-btn-primary-bg);
+  --color-vault-btn-primary-fg: var(--vault-btn-primary-fg);
+  --color-vault-btn-secondary: var(--vault-btn-secondary-bg);
+  --color-vault-btn-oauth: var(--vault-btn-oauth-bg);
+
+  /* Pills / Badges */
+  --color-vault-pill: var(--vault-pill-bg);
+  --color-vault-pill-fg: var(--vault-pill-fg);
+  --color-vault-pill-border: var(--vault-pill-border);
+
+  /* Status */
+  --color-vault-favorite: var(--vault-favorite);
+  --color-vault-favorite-tint: var(--vault-favorite-tint);
+  --color-vault-favorite-empty: var(--vault-favorite-empty);
+  --color-vault-destructive: var(--vault-destructive);
+
+  /* Border Radius  →  rounded-vault-xs / sm / md / lg / xl / pill */
+  --radius-vault-xs: var(--vault-radius-xs);
+  --radius-vault-sm: var(--vault-radius-sm);
+  --radius-vault-md: var(--vault-radius-md);
+  --radius-vault-lg: var(--vault-radius-lg);
+  --radius-vault-xl: var(--vault-radius-xl);
+  --radius-vault-pill: var(--vault-radius-pill);
+
+  /* Shadows  →  shadow-vault-sm / card / raised */
+  --shadow-vault-sm: var(--vault-shadow-sm);
+  --shadow-vault-card: var(--vault-shadow-card);
+  --shadow-vault-raised: var(--vault-shadow-raised);
+
+  /* Font sizes  →  text-vault-2xs / xs / sm / base / lg / 2xl */
+  --text-vault-2xs: var(--vault-font-size-2xs);
+  --text-vault-xs: var(--vault-font-size-xs);
+  --text-vault-sm: var(--vault-font-size-sm);
+  --text-vault-base: var(--vault-font-size-base);
+  --text-vault-lg: var(--vault-font-size-lg);
+  --text-vault-2xl: var(--vault-font-size-2xl);
 
 }
 
 :root {
   color-scheme: light;
 
-  --radius: 0.625rem; /* shadcn base radius — components build on this */
+  --radius: 0.625rem;
+  /* shadcn base radius — components build on this */
 
-  --background:         #F3F4F6;
-  --foreground:         #111827;
-  --card:               #ffffff;
-  --card-foreground:    #111827;
-  --popover:            #ffffff;
+  --background: #F3F4F6;
+  --foreground: #111827;
+  --card: #ffffff;
+  --card-foreground: #111827;
+  --popover: #ffffff;
   --popover-foreground: #111827;
-  --primary:            #111827;
+  --primary: #111827;
   --primary-foreground: #ffffff;
-  --secondary:          #F3F4F6;
+  --secondary: #F3F4F6;
   --secondary-foreground: #374151;
-  --muted:              #F9FAFB;
-  --muted-foreground:   #6B7280;
-  --accent:             #EEF2FF;
-  --accent-foreground:  #5B7AFF;
-  --destructive:        #EF4444;
-  --border:             #E5E7EB;
-  --input:              #ffffff;
-  --ring:               #5B7AFF;
+  --muted: #F9FAFB;
+  --muted-foreground: #6B7280;
+  --accent: #EEF2FF;
+  --accent-foreground: #5B7AFF;
+  --destructive: #EF4444;
+  --border: #E5E7EB;
+  --input: #ffffff;
+  --ring: #5B7AFF;
 
-  --sidebar:                      #ffffff;
-  --sidebar-foreground:           #111827;
-  --sidebar-primary:              #111827;
-  --sidebar-primary-foreground:   #ffffff;
-  --sidebar-accent:               #EEF2FF;
-  --sidebar-accent-foreground:    #5B7AFF;
-  --sidebar-border:               #E5E7EB;
-  --sidebar-ring:                 #5B7AFF;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #111827;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #EEF2FF;
+  --sidebar-accent-foreground: #5B7AFF;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #5B7AFF;
 
 
 }
@@ -85,33 +158,33 @@
 .dark {
   color-scheme: dark;
 
-  --background:         #060D1A;
-  --foreground:         #F9FAFB;
-  --card:               #0D1829;
-  --card-foreground:    #F9FAFB;
-  --popover:            #111E30;
+  --background: #060D1A;
+  --foreground: #F9FAFB;
+  --card: #0D1829;
+  --card-foreground: #F9FAFB;
+  --popover: #111E30;
   --popover-foreground: #F9FAFB;
-  --primary:            #F9FAFB;
+  --primary: #F9FAFB;
   --primary-foreground: #111827;
-  --secondary:          #111E30;
+  --secondary: #111E30;
   --secondary-foreground: #CBD5E1;
-  --muted:              #0F1A2B;
-  --muted-foreground:   #8FA3BF;
-  --accent:             #1A2744;
-  --accent-foreground:  #6B8FFF;
-  --destructive:        #EF4444;
-  --border:             #1F2D45;
-  --input:              #111E30;
-  --ring:               #6B8FFF;
+  --muted: #0F1A2B;
+  --muted-foreground: #8FA3BF;
+  --accent: #1A2744;
+  --accent-foreground: #6B8FFF;
+  --destructive: #EF4444;
+  --border: #1F2D45;
+  --input: #111E30;
+  --ring: #6B8FFF;
 
-  --sidebar:                      #0B1424;
-  --sidebar-foreground:           #F9FAFB;
-  --sidebar-primary:              #F9FAFB;
-  --sidebar-primary-foreground:   #111827;
-  --sidebar-accent:               #1A2744;
-  --sidebar-accent-foreground:    #6B8FFF;
-  --sidebar-border:               #1F2D45;
-  --sidebar-ring:                 #6B8FFF;
+  --sidebar: #0B1424;
+  --sidebar-foreground: #F9FAFB;
+  --sidebar-primary: #F9FAFB;
+  --sidebar-primary-foreground: #111827;
+  --sidebar-accent: #1A2744;
+  --sidebar-accent-foreground: #6B8FFF;
+  --sidebar-border: #1F2D45;
+  --sidebar-ring: #6B8FFF;
 
 
 }
@@ -120,7 +193,165 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground font-sans;
   }
+}
+
+/* ============================================================
+    LINK VAULT — Design Tokens (extracted via Figma REST API)
+    Prefix: --vault-* 
+   ============================================================ */
+
+:root {
+  /* Accent — #51A2FF links/focus, #8EC5FF lighter shade, #162456 badge bg */
+  --vault-primary: #51A2FF;
+  --vault-primary-light: #8EC5FF;
+  --vault-primary-muted: #EEF4FF;
+  /* very light tint for highlighted backgrounds */
+  --vault-primary-hover: #3D8EF0;
+
+  /* Surfaces (light) */
+  --vault-bg: #F1F5F9;
+  --vault-surface: #FFFFFF;
+  --vault-surface-raised: #FFFFFF;
+  /* same as surface in light mode */
+  --vault-sidebar-bg: #F8FAFC;
+
+  /* Text (light) */
+  --vault-text-primary: #0F172B;
+  --vault-text-secondary: #314158;
+  --vault-text-muted: #90A1B9;
+  /* meta labels, section headings */
+  --vault-text-on-primary: #FFFFFF;
+  --vault-text-link: #51A2FF;
+
+  /* Borders — #E2E8F0 from sidebar stroke in Figma */
+  --vault-border: #E2E8F0;
+  --vault-border-subtle: #F1F5F9;
+
+  /* Inputs */
+  --vault-input-bg: #FFFFFF;
+  --vault-input-placeholder: #90A1B9;
+
+  /* Buttons (light) — primary = dark navy */
+  --vault-btn-primary-bg: #0F172B;
+  --vault-btn-primary-fg: #FFFFFF;
+  --vault-btn-secondary-bg: #F1F5F9;
+  --vault-btn-secondary-fg: #314158;
+  --vault-btn-oauth-bg: #0F172B;
+  --vault-btn-oauth-fg: #FFFFFF;
+
+  /* Pills — #162456 bg + #1C398E border (deep navy badge from Figma) */
+  --vault-pill-bg: #162456;
+  --vault-pill-fg: #8EC5FF;
+  --vault-pill-border: #1C398E;
+
+  /* Status */
+  --vault-favorite: #FFB900;
+  /* filled star — from SVG fills in Figma */
+  --vault-favorite-tint: #FFFBEB;
+  /* bg tint behind favorite button */
+  --vault-favorite-empty: #CAD5E2;
+  --vault-destructive: #EF4444;
+
+  /* Border Radius — exact cornerRadius values from Figma nodes */
+  --vault-radius-xs: 3px;
+  /* tiny tags */
+  --vault-radius-sm: 6px;
+  /* chips, tabs */
+  --vault-radius-md: 8px;
+  /* inputs, buttons */
+  --vault-radius-lg: 12px;
+  /* cards, modals */
+  --vault-radius-xl: 16px;
+  /* large panels */
+  --vault-radius-pill: 9999px;
+
+  /* Shadows — from Figma DROP_SHADOW effects (0.05 opacity on cards, 0.10 on modals) */
+  --vault-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --vault-shadow-card: 0 1px 2px 0 rgb(0 0 0 / 0.05),
+    0 1px 3px 0 rgb(0 0 0 / 0.05);
+  --vault-shadow-raised: 0 1px 2px 0 rgb(0 0 0 / 0.10),
+    0 2px 4px 0 rgb(0 0 0 / 0.10),
+    0 4px 6px 0 rgb(0 0 0 / 0.10);
+
+  /* Typography — Figma uses Segoe UI; Geist Variable is the web equivalent
+     Sizes from Figma text nodes: 11 / 12 / 14 / 16 / 20 / 30px */
+  --vault-font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --vault-font-size-2xs: 0.6875rem;
+  /* 11px */
+  --vault-font-size-xs: 0.75rem;
+  /* 12px */
+  --vault-font-size-sm: 0.875rem;
+  /* 14px */
+  --vault-font-size-base: 1rem;
+  /* 16px */
+  --vault-font-size-lg: 1.25rem;
+  /* 20px */
+  --vault-font-size-2xl: 1.875rem;
+  /* 30px */
+  --vault-font-weight-normal: 400;
+  --vault-font-weight-medium: 500;
+  --vault-font-weight-semibold: 600;
+  --vault-font-weight-black: 800;
+  /* page headings */
+
+  /* Line heights — from Figma lineHeightPx */
+  --vault-leading-xs: 1rem;
+  /* 16px */
+  --vault-leading-sm: 1.1875rem;
+  /* 19px */
+  --vault-leading-base: 1.5rem;
+  /* 24px */
+  --vault-leading-lg: 1.75rem;
+  /* 28px */
+  --vault-leading-2xl: 2.25rem;
+  /* 36px */
+}
+
+.dark {
+  /* Surfaces */
+  --vault-bg: #020618;
+  /* deepest navy — page background */
+  --vault-surface: #0F172B;
+  --vault-surface-raised: #162456;
+  /* elevated cards / modals */
+  --vault-sidebar-bg: #0F172B;
+
+  /* Text */
+  --vault-text-primary: #F8FAFC;
+  --vault-text-secondary: #CAD5E2;
+  --vault-text-muted: #45556C;
+  --vault-text-link: #51A2FF;
+
+  /* Borders — #1D293D from Figma stroke on dark Aside */
+  --vault-border: #1D293D;
+  --vault-border-subtle: #0F172B;
+
+  /* Inputs */
+  --vault-input-bg: #0F172B;
+  --vault-input-placeholder: #45556C;
+
+  /* Buttons — primary flips to white on dark */
+  --vault-btn-primary-bg: #FFFFFF;
+  --vault-btn-primary-fg: #0F172B;
+  --vault-btn-secondary-bg: #162456;
+  --vault-btn-secondary-fg: #CAD5E2;
+  --vault-btn-oauth-bg: #0F172B;
+  --vault-btn-oauth-fg: #F8FAFC;
+
+  /* Pills */
+  --vault-pill-bg: #162456;
+  --vault-pill-fg: #8EC5FF;
+  --vault-pill-border: #1C398E;
+
+  /* Shadows */
+  --vault-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.20);
+  --vault-shadow-card: 0 1px 2px 0 rgb(0 0 0 / 0.20),
+    0 1px 3px 0 rgb(0 0 0 / 0.20);
+  --vault-shadow-raised: 0 1px 2px 0 rgb(0 0 0 / 0.30),
+    0 2px 4px 0 rgb(0 0 0 / 0.30),
+    0 4px 6px 0 rgb(0 0 0 / 0.30);
 }
